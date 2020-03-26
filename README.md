@@ -10,4 +10,4 @@ If you have not yet setup the topics required for Kafka Connect, you will need t
 
 ## How to build
 
-`docker build . -t datastream-connect:<version>`
+`docker build . -t datastream-connect:1.0.0`

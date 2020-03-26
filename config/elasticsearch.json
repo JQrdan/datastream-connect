@@ -6,6 +6,8 @@
     "topics": "genre-averages",
     "key.ignore": "true",
     "connection.url": "http://es01:9200,http://es02:9200,http://es03:9200",
-    "type.name": "kafka-connect"
+    "type.name": "kafka-connect",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
   }
 }
