@@ -14,9 +14,11 @@ RUN mkdir /opt/connectors
 # move connectors into plugin directory
 COPY connectors /opt/connectors/
 
+COPY wait-for-it.sh /opt/kafka
+
 WORKDIR /opt/kafka
 
 EXPOSE 8083
 
 # start kafka connect
-ENTRYPOINT ["./bin/connect-distributed.sh", "config/connect-distributed.properties"]
+ENTRYPOINT [ "./wait-for-it.sh", "-t", "0", "kafkarest:8082", "--", "./bin/connect-distributed.sh", "config/connect-distributed.properties"]
